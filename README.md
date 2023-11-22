@@ -7,19 +7,20 @@ This repository contains the machine learning model, scripts, and data for predi
 
 1. fsm-lite: https://github.com/nvalimak/fsm-lite
 2. Python3 libraries:
+
 `$ pip3 install pandas`<br>
 `$ pip3 install numpy`<br>
 `$ pip3 install rpy2`<br>
 `$ pip3 install xgboost`<br>
 `$ pip3 install sklearn`<br>
 
-* Model training:
+## Model training:
 
 This script uses Scikit-learn to train gradient boosted models to predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes
 
 `$ python3 stratified_rf_regressor_xgboost.py`<br>
 
-# Model prediction:
+## Model prediction:
 
 This script uses Skit-learn to for predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes
 
@@ -28,4 +29,4 @@ This script uses Skit-learn to for predict virulence/plant weight phenotypes bas
 ## Input files
 
 * cluster_penotypes_kmers.rds: input table for model training in RDS format containing phenotype/plant weight values and presence and absence of kmers for the 318 isolates used in the study
-# model7.model: final gradient boosted model for predicting virulence/plant weight phenotypes
+* model7.model: final gradient boosted model for predicting virulence/plant weight phenotypes

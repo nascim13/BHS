@@ -27,5 +27,8 @@ This script uses Skit-learn to for predict virulence/plant weight phenotypes bas
 
 ## Input files
 
-* cluster_penotypes_kmers.rds: input table for model training in RDS format containing phenotype/plant weight values and presence and absence of kmers for the 318 isolates used in the study.
+* cluster_penotypes_kmers.rds: input table for model training in RDS format containing phenotype/plant weight values and presence and absence of kmers for the 318 isolates used in the study. Example columns:
+
+> Sample_ID, Phenotype_value, kmer_pattern_1, ..., kmer_pattern_2053163
+
 * model7.model: final gradient boosted model for predicting virulence/plant weight phenotypes.

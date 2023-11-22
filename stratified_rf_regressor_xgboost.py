@@ -20,7 +20,7 @@ print ('MAE', 'RMSE', sep = '\t', file = output)
 print ('Loading RDS file...')
 
 readRDS = r['readRDS']
-dataset = readRDS('../clusterPhenotypesKmers.rds')
+dataset = readRDS('cluster_phenotypes_kmers_sample.rds')
 dataset = pandas2ri.rpy2py_dataframe(dataset)
 
 # Convert data to a numpy array

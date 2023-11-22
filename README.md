@@ -1,6 +1,5 @@
 <img src="publication_header.png" width="400">
 
-# Predictive modelling of Pseudomonas syringae virulence on bean using gradient boosted decision trees
 This repository contains the machine learning model, scripts, and data for predicting Pseudomonas syringae virulence in beans using gradient boosted decision trees.
 
 ## Installation requirements

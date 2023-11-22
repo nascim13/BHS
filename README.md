@@ -21,7 +21,7 @@ This script uses Scikit-learn to train gradient boosted models to predict virule
 
 ## Model prediction
 
-This script uses Skit-learn to for predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes.
+This script uses Scikit-learn to for predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes.
 
 `$ python3 predict_with_rg_regressor_xgboost.py`<br>
 

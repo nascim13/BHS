@@ -27,7 +27,7 @@ This script uses Scikit-learn to predict virulence/plant weight phenotypes based
 
 ## Input files
 
-* cluster_penotypes_kmers.rds: input table for model training in RDS format containing phenotype/plant weight values and presence and absence of kmers for the 318 isolates used in the study. Example columns:
+* cluster_phenotypes_kmers.rds: input table for model training in RDS format containing phenotype/plant weight values and presence and absence of kmers for the 318 isolates used in the study. Format:
 
 > Sample_ID, Phenotype_value, kmer_pattern_1, ..., kmer_pattern_2053163
 

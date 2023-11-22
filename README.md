@@ -14,13 +14,13 @@ This repository contains the machine learning model, scripts, and data for predi
 `$ pip3 install xgboost`<br>
 `$ pip3 install sklearn`<br>
 
-## Model training:
+## Model training
 
 This script uses Scikit-learn to train gradient boosted models to predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes
 
 `$ python3 stratified_rf_regressor_xgboost.py`<br>
 
-## Model prediction:
+## Model prediction
 
 This script uses Skit-learn to for predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes
 

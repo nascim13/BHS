@@ -16,17 +16,17 @@ This repository contains the machine learning model, scripts, and data for predi
 
 ## Model training
 
-This script uses Scikit-learn to train gradient boosted models to predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes
+This script uses Scikit-learn to train gradient boosted models to predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes.
 
 `$ python3 stratified_rf_regressor_xgboost.py`<br>
 
 ## Model prediction
 
-This script uses Skit-learn to for predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes
+This script uses Skit-learn to for predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes.
 
 `$ python3 predict_with_rg_regressor_xgboost.py`<br>
 
 ## Input files
 
-* cluster_penotypes_kmers.rds: input table for model training in RDS format containing phenotype/plant weight values and presence and absence of kmers for the 318 isolates used in the study
-* model7.model: final gradient boosted model for predicting virulence/plant weight phenotypes
+* cluster_penotypes_kmers.rds: input table for model training in RDS format containing phenotype/plant weight values and presence and absence of kmers for the 318 isolates used in the study.
+* model7.model: final gradient boosted model for predicting virulence/plant weight phenotypes.

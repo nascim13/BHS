@@ -32,7 +32,7 @@ labels = np.array(dataset.iloc[:, 1])
 
 #print('The shape of our features is:', features.shape)
 
-model = xgb.model = xgb.XGBRFRegressor(base_score=0.5, booster='gbtree', colsample_bylevel=1,
+model = xgb.XGBRFRegressor(base_score=0.5, booster='gbtree', colsample_bylevel=1,
                 colsample_bytree=0.3, eta=0.5, gamma=0, gpu_id=-1,
                 importance_type='gain', interaction_constraints='',
                 max_delta_step=0, max_depth=6, min_child_weight=5, missing=None,

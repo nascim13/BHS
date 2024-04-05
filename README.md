@@ -1,6 +1,6 @@
 <img src="publication_header.png" width="400">
 
-This repository contains the machine learning model, scripts, and data for predicting Pseudomonas syringae virulence in beans using gradient boosted decision trees.
+This repository contains the complete workflow for reproducing the findings in "Predictive modeling of Pseudomonas syringae virulence on bean using gradient boosted decision trees" (doi: 10.1371/journal.ppat.1010716).
 
 ## Installation requirements
 
@@ -13,22 +13,12 @@ This repository contains the machine learning model, scripts, and data for predi
 `$ pip3 install xgboost`<br>
 `$ pip3 install sklearn`<br>
 
-## Model training
+## Running the workflow
 
-This script uses Scikit-learn to train gradient boosted models to predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes.
+The Nextflow script is available under the "Scripts" folder, alongside other Python and R scripts required for successfully running the workflow. The workflow was designed for PBS HPC systems. SLURM users may need to adjust the workflow cluster options.
 
-`$ python3 stratified_rf_regressor_xgboost.py`<br>
+`$ nextflow run predict_plant_health_phenotypes.nf -profile <your_HPC_profile>`<br>
 
 ## Model prediction
 
 This script uses Scikit-learn to predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes.
-
-`$ python3 predict_with_rg_regressor_xgboost.py`<br>
-
-## Input files
-
-* cluster_phenotypes_kmers.rds: input table for model training in RDS format containing phenotype/plant weight values and presence and absence of kmers for the 318 isolates used in the study. Format:
-
-> Sample_ID, Phenotype_value, kmer_pattern_1, ..., kmer_pattern_2053163
-
-* model7.model: final gradient boosted model for predicting virulence/plant weight phenotypes.

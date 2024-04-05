@@ -18,7 +18,3 @@ This repository contains the complete workflow for reproducing the findings in "
 The Nextflow script is available under the "Scripts" folder, alongside other Python and R scripts required for successfully running the workflow. The workflow was designed for PBS HPC systems. SLURM users may need to adjust the workflow cluster options.
 
 `$ nextflow run predict_plant_health_phenotypes.nf -profile <your_HPC_profile>`<br>
-
-## Model prediction
-
-This script uses Scikit-learn to predict virulence/plant weight phenotypes based on whole-genome data from bacterial genomes.

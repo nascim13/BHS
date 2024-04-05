@@ -1,4 +1,0 @@
-samp_id	pat_1	pat_2	pat_3	pat_4	pat_5
-Pph1448A	1	1	0	0	1
-PsyB728a	1	1	0	0	1
-PtoDC3000	0	1	1	0	0

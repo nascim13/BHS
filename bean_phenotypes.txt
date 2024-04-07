@@ -1,3 +1,4 @@
+Isolate  Plant_weight
 PatICMP4303	1.0
 PatICMP4453	1.0
 PatICMP2813	1.0

@@ -5,6 +5,7 @@ nextflow.enable.dsl=2
 params.path_to_genomes = '<path_to_the_holding_the_fasta_genome_assemblies>'
 params.outDir = '<output_file_path>'
 params.scripts_folder = '<path_to_your_Scripts_folder>'
+params.input_for_predictions = '<path_to_input_file_for_predictions.txt'
 
 process create_input_list {
     publishDir params.outDir, mode: 'copy'
@@ -85,10 +86,27 @@ process train_model {
      """
 }
 
+process make_predictions {
+     publishDir params.outDir, mode: 'copy'
+     clusterOptions = '-l select=1:ncpus=1:mem=100gb,walltime=12:00:00'
+
+     input:
+     path(models)
+
+     output:
+     path "plant_weight_predictions.txt"
+
+     script:
+     """
+     python3 /srv/scratch/cking/ralmeida/PhD/Scripts/predict_plant_health_phenotypes.py ${params.input_for_predictions}
+     """
+}
+
 workflow {
     list_file_results = create_input_list()
     fsm_kmers_results = run_fsm_lite(list_file_results)
     kmers_table_results = parse_kmers(fsm_kmers_results)
     merged_table_results = merge_datasets(kmers_table_results)
     trained_model_results = train_model(merged_table_results)
+    prediction_results = make_predictions(trained_model_results)
 }

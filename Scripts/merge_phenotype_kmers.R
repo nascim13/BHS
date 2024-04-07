@@ -1,6 +1,6 @@
 args <- commandArgs(trailingOnly = TRUE)
 
-phenotypeData <- read.table("/srv/scratch/cking/ralmeida/PhD/Phenotypes/beanPhenotypes.txt", sep="\t", stringsAsFactors=FALSE, header=FALSE, col.names = c("ID", "Phenotype"))
+phenotypeData <- read.table("/srv/scratch/cking/ralmeida/PhD/Phenotypes/bean_phenotypes.txt", sep="\t", stringsAsFactors=FALSE, header=FALSE, col.names = c("ID", "Phenotype"))
 phenotypeData$ID <- as.character(phenotypeData$ID) # Ensure ID column is treated as character
 
 kmerTable <- read.table(args[1], sep="\t", header=TRUE, stringsAsFactors=FALSE)
@@ -15,5 +15,5 @@ desiredColumns <- c("IsolateID", "Phenotype", grep("pat", names(filteredKmerTabl
 
 finalTable <- filteredKmerTable[, desiredColumns]
 
-write.csv(finalTable, "clusterPhenotypesKmersUpdated.csv", row.names = FALSE, quote = FALSE)
-saveRDS(finalTable, "clusterPhenotypesKmersUpdated.rds")
+write.csv(finalTable, "feature_labels_table.csv", row.names = FALSE, quote = FALSE)
+saveRDS(finalTable, "feature_labels_table.rds")

@@ -61,7 +61,7 @@ process merge_datasets {
      path(kmer_table)
 
      output:
-     path "clusterPhenotypesKmersUpdated.rds"
+     path "feature_labels_table.rds"
 
      script:
      """

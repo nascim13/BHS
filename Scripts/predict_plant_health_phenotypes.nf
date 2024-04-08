@@ -7,6 +7,7 @@ params.outDir = '<output_file_path>'
 params.scripts_folder = '<path_to_your_Scripts_folder>'
 params.input_for_predictions = '<path_to_input_file_for_predictions.txt'
 
+// This block generates an input list for FSM-lite containing the pathogen genomes of interest
 process create_input_list {
     publishDir params.outDir, mode: 'copy'
 
@@ -19,6 +20,7 @@ process create_input_list {
     """
 }
 
+// This block splits the genome sequences into unique kmers (length = 31) and records their distributions
 process run_fsm_lite {
     publishDir params.outDir, mode: 'copy'
 	
@@ -36,6 +38,7 @@ process run_fsm_lite {
     """
 }
 
+// This block removes redudancy and parses the FSM-lite output into a table format 
 process parse_kmers {
     publishDir "${params.outDir}", mode: 'copy'
 
@@ -53,6 +56,7 @@ process parse_kmers {
     """
 }
 
+// This block merges phenotype and genotype data and saves them into RDS for faster loading
 process merge_datasets {
      publishDir params.outDir, mode: 'copy'
 
@@ -70,6 +74,7 @@ process merge_datasets {
      """
 }
 
+// This block trains a gradient boosting model using kmer patterns as features and plant weight phenotypes as labels
 process train_model {
      publishDir params.outDir, mode: 'copy'
      clusterOptions = '-l select=1:ncpus=1:mem=100gb,walltime=48:00:00'
@@ -86,6 +91,7 @@ process train_model {
      """
 }
 
+// This block predicts plant weight phenotypes from new genomes
 process make_predictions {
      publishDir params.outDir, mode: 'copy'
      clusterOptions = '-l select=1:ncpus=1:mem=100gb,walltime=12:00:00'
@@ -102,6 +108,7 @@ process make_predictions {
      """
 }
 
+// This block runs the workflow
 workflow {
     list_file_results = create_input_list()
     fsm_kmers_results = run_fsm_lite(list_file_results)
